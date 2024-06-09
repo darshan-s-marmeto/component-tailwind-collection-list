@@ -29,8 +29,6 @@ class collectionListSlider extends HTMLElement {
         const mobileCount = this.getAttribute('data-mobilecount') || 2;
         const type = autoplay? 'loop': 'slide';
 
-        console.log('count d', desktopCount, 'type', typeof(desktopCount))
-        console.log('count d', mobileCount, 'type', typeof(mobileCount))
         this.splideInstance = new Splide(_this, {
           type: type,
           perPage: parseInt(desktopCount),
