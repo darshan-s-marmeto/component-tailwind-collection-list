@@ -1,0 +1,78 @@
+ /* 
+ * 1rem = 10px
+ * if --transition-duration is present in base styling feel free to remove the variable in this file. 
+ * else set --transition-duration value based on requirement.
+*/
+ :root {
+   --transition-duration: 0.5s;
+ }
+ collection-list-slider ul,
+ .collection-list__content p {
+   margin: 0;
+   padding: 0;
+ }
+ .collection-list__grid-item {
+   height: 30rem;
+ }
+ .collection-list__grid-item .collection-list_url,
+ .collection-list__collection-name {
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+ }
+ .collection-list__grid-item .collection-list_url {
+   display: block;
+   z-index: 1;
+   cursor: pointer;
+   background-color: black;
+   opacity: 0;
+   transition: all var(--transition-duration) ease;
+ }
+ .slider_container .collection-list__grid-item {
+   margin-right: 10px;
+ }
+ .collection-list__grid-item:hover .collection-list_url {
+   opacity: 0.25;
+ }
+ .collection-list__collection-name {
+   z-index: 2;
+ }
+ .collection-list__collection-name p {
+   margin: 0;
+ }
+ .collection-list__collection-name .collection-link {
+   font-size: 16px;
+   display: inline;
+   background-image: linear-gradient(to top, currentColor 0px, currentColor 0px), linear-gradient(to top, transparent 0px, transparent 0px);
+   background-repeat: no-repeat;
+   background-position: right bottom, right bottom;
+   background-size: 0% .1rem, 100% .1rem;
+   transition: background-size var(--transition-duration) ease;
+ }
+ .collection-list__grid-item:hover .collection-link {
+   background-position: left bottom, left bottom;
+   background-size: 100% .1rem, 100% .1rem;
+ }
+ .collection-list__grid-item img {
+   transition: all var(--transition-duration) ease;
+   height: 100%;
+   width: 100%;
+ }
+ .collection-list__grid-item:hover img {
+   scale: 1.1;
+ }
+ @media screen and (min-width: 768px) {
+   .collection-list__grid-item {
+     height: 55rem;
+   }
+   .slider_container .collection-list__grid-item {
+     margin-right: 20px;
+   }
+   .collection-list__collection-name {
+     padding: 2rem 3rem;
+   }
+   .collection-list__collection-name .collection-link {
+     font-size: 20px;
+   }
+ }
